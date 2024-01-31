@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  username String    @unique
+  email    String    @unique
+  hash     String
+  salt     String
+  verified Boolean   @default(false)
+  messages Message[]
+}
+
+model Message {
+  id       Int      @id @default(autoincrement())
+  content  String?
+  author   User     @relation(fields: [authorId], references: [id])
+  sentAt   DateTime @default(now())
+  authorId Int
+}
