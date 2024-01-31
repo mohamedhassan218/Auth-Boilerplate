@@ -22,4 +22,10 @@ Then, you gonna to migrate your database using this command:
 npx prisma migrate dev --name init
 ```
 
+Now, you must generate public and private keys to be able to work. Just run this command:
+
+```Bash
+node Auth/generateKey.js
+```
+
 Finally, you can run the project and use postman or any API testing tool to see the results.
