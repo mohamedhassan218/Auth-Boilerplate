@@ -1,6 +1,10 @@
 # Auth
 
-A good authentication skeleton to the project based on the JSON Web Token (JWT). We've implemented a jwt-strategy from scratch to suit our needs.
+A stable authentication skeleton based on the JSON Web Token (JWT).
+
+It uses **prisma** as an ORM with MySQL database.
+
+It implements a simple one-to-many relationship between the **User** model and the **Message** model. 
 
 To run it locally, clone this repo then create your own `.env` file with the following variables:
 
